@@ -1,13 +1,15 @@
 # Подготовка
+```bash
 sudo systemctl start mysql
 sudo systemctl enable mysql
 sudo systemctl status mysql
 mysql --version
 mysql  Ver 8.0.42-0ubuntu0.24.04.2 for Linux on x86_64 ((Ubuntu))
-
-sudo mysql -h localhost
-
+mysql
 CREATE USER 'ilya'@'localhost' IDENTIFIED BY '1';
+sudo mysql -h localhost
+```
+
 ```sql
 show databases;
 create database sql_practice;

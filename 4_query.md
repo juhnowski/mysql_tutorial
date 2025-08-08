@@ -12,6 +12,7 @@ select колонки
 ```sql
 alter table StudentDetails add Location varchar(20);
 ```
+```
 +-----+-------+------+--------+------+----------+
 | sid | name  | Age  | Gender | cid  | Location |
 +-----+-------+------+--------+------+----------+
@@ -20,7 +21,7 @@ alter table StudentDetails add Location varchar(20);
 |   3 | John  |   27 | Male   |    2 | NULL     |
 |   4 | Peter |   24 | Male   |    2 | NULL     |
 +-----+-------+------+--------+------+----------+
-
+```
 ```sql
 update StudentDetails set Location = 'NN' where sid in (1,3);
 update StudentDetails set Location = 'Msk' where sid=2;
@@ -33,32 +34,37 @@ select * from StudentDetails;
 select sid, name, Age, Gender, cid,  Location  from StudentDetails;
 select *  from StudentDetails where Location = 'NN';
 ```
+```
 +-----+------+------+--------+------+----------+
 | sid | name | Age  | Gender | cid  | Location |
 +-----+------+------+--------+------+----------+
 |   1 | Ram  |   21 | Male   |    1 | NN       |
 |   3 | John |   27 | Male   |    2 | NN       |
 +-----+------+------+--------+------+----------+
-
+```
 ```sql
 select count(*) as CountsOfStudents from StudentDetails;
+```
 ```
 +------------------+
 | CountsOfStudents |
 +------------------+
 |                4 |
 +------------------+
-
+```
 ```sql
 select count(*) as CountsOfStudents from StudentDetails where Location = 'NN';
+```
 ```
  +------------------+
  | CountsOfStudents |
  +------------------+
  |                2 |
  +------------------+
+```
 ```sql
 select location,count(*) as CountsOfStudents from StudentDetails group by location;
+```
 ```
 +----------+------------------+
 | location | CountsOfStudents |
@@ -67,18 +73,20 @@ select location,count(*) as CountsOfStudents from StudentDetails group by locati
 | Msk      |                1 |
 | SPb      |                1 |
 +----------+------------------+
-
+```
 ```sql
 select location,count(*) as CountsOfStudents from StudentDetails group by location having  CountsOfStudents > 1;
+```
 ```
 +----------+------------------+
 | location | CountsOfStudents |
 +----------+------------------+
 | NN       |                2 |
 +----------+------------------+
-
+```
 ```sql
 select * from StudentDetails order by name desc;
+```
 ```
 +-----+-------+------+--------+------+----------+
 | sid | name  | Age  | Gender | cid  | Location |
@@ -88,13 +96,14 @@ select * from StudentDetails order by name desc;
 |   4 | Peter |   24 | Male   |    2 | SPb      |
 |   3 | John  |   27 | Male   |    2 | NN       |
 +-----+-------+------+--------+------+----------+
-
+```
 ```sql
 select * from StudentDetails limit 1;
+```
 ```
 +-----+------+------+--------+------+----------+
 | sid | name | Age  | Gender | cid  | Location |
 +-----+------+------+--------+------+----------+
 |   1 | Ram  |   21 | Male   |    1 | NN       |
 +-----+------+------+--------+------+----------+
-
+```
